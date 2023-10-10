@@ -1,0 +1,47 @@
+.LoginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+}
+
+.LoginPage form {
+    font-size: 18px;
+
+}
+
+.LoginPage form label{
+    margin: 3px;  
+}
+.LoginPage form input{
+    padding: 5px;
+}
+
+.LoginPage_btn {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.LoginPage_btn button {
+    margin-right: 10px; 
+    width: 100px;
+}
+
+.signup-button {
+    height: 40px;
+}
+
+.signup-button a {
+    text-decoration: none;
+  }
+  
+
+
+
+
+
+
+

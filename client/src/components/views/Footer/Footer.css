@@ -1,0 +1,38 @@
+#footer {
+    background: url(https://earpearp.cafe24.com/2022_web_img/web/footer_bg.png)no-repeat top center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+#footer .inner {
+    height: 250px;
+    padding-top: 70px;
+    text-align: center;
+  }
+  
+  .footer_menu {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    color: #fff;
+    list-style: none; 
+  }
+  
+  li {
+    display: inline-block;
+    padding: 40px 20px; /* 위아래 10px, 좌우 20px의 간격 설정 */
+    color: #fff;
+    margin: 0 10px; /* 좌우 간격 10px 설정 */
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+#footer h3 {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 60px;
+  }
+  

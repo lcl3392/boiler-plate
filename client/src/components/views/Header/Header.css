@@ -1,0 +1,19 @@
+.header { width: 100%; background: #2727f7;}
+.header .inner { height: 130px;  }
+.header h1 { position: absolute; left: 50px; top: 0px;} 
+.header h1 img { width: 90px;}
+.header .nav { position: absolute; right:30px; top: 30px; }
+.header .nav ul { display: flex; list-style: none;}
+.header .nav ul li {margin-left: 70px; margin-top: -30px; position: relative; }
+
+
+.header .nav ul li a {font-size: 20px; font-weight: bold; color: #fff; text-decoration:none}
+.header .nav ul li button {
+    border: none; /* 선 제거 */
+    background: none; /* 배경색 제거 */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer; /* 버튼 스타일에 맞게 커서를 포인터로 변경 (선택 사항) */
+}
