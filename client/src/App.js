@@ -16,7 +16,7 @@ function App() {
         <Route path="/register" element={Auth(RegisterPage, false)()} />
       </Routes> */}
      <Routes>
-      <Route path="/" element={<LandingPage />} />
+      <Route path="/boiler-plate" element={<LandingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
     </Routes>

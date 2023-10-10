@@ -36,7 +36,7 @@ function LoginPage(props) {
     dispatch(loginUser(body))
       .then(response => {                    //렌딩페이지로 이동
         if (response.payload.loginSuccess) {
-          navigate('/');
+          navigate('/boiler-plate');
         } else {
           alert('아이디와 패스워드를 입력해주세요.');
         }

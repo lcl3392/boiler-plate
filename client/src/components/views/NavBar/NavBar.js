@@ -26,7 +26,7 @@ function NavBar() {
   return (
     <nav className="nav">
     <ul>
-    <li><Link to="/"><a>Home</a></Link></li>
+    <li><Link to="/boiler-plate"><a>Home</a></Link></li>
     <li><Link to="/login"><a>Login</a></Link></li>
     <li><button onClick={handleLogout}>Logout</button></li>
     </ul>
