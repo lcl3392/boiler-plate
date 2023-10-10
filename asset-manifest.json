@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/boiler-plate/static/css/main.8fcc133e.css",
-    "main.js": "/boiler-plate/static/js/main.c0496ae3.js",
+    "main.js": "/boiler-plate/static/js/main.7f9804d3.js",
     "index.html": "/boiler-plate/index.html",
     "main.8fcc133e.css.map": "/boiler-plate/static/css/main.8fcc133e.css.map",
-    "main.c0496ae3.js.map": "/boiler-plate/static/js/main.c0496ae3.js.map"
+    "main.7f9804d3.js.map": "/boiler-plate/static/js/main.7f9804d3.js.map"
   },
   "entrypoints": [
     "static/css/main.8fcc133e.css",
-    "static/js/main.c0496ae3.js"
+    "static/js/main.7f9804d3.js"
   ]
 }
