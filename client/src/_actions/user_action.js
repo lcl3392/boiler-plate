@@ -5,6 +5,7 @@ import {
     // AUTH_USER
 } from './types';
 
+//로그인 액션 생성자 함수
 export function loginUser(dataToSubmit){
     const request = axios.post('/api/users/login', dataToSubmit)
     .then(response => response.data)
@@ -14,8 +15,7 @@ export function loginUser(dataToSubmit){
         payload: request
     }
 }
-
-
+//회원가입 액션 생성자 함수
 export function registerUser(dataToSubmit){
     const request = axios.post('/api/users/register', dataToSubmit)
     .then(response => response.data)

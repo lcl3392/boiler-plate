@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10
 const jwt = require('jsonwebtoken')
 
+// 사용자 데이터베이스 모델을 정의하고 비밀번호 암호화, 토큰 생성 및 검증 기능을 추가하여 사용자 관리
+
 const userSchema = mongoose.Schema({
     name: {
         type: String,
@@ -35,12 +37,11 @@ const userSchema = mongoose.Schema({
 });
 
 
-
+ // 비밀번호 암호화
 userSchema.pre('save', function(next) {
     var user = this;
 
     if (user.isModified('password')) {
-        // 비밀번호 암호화
         bcrypt.genSalt(saltRounds, function(err, salt) {
             if (err) return next(err);
             bcrypt.hash(user.password, salt, function(err, hash) {
@@ -54,6 +55,7 @@ userSchema.pre('save', function(next) {
     }
 });
 
+//비밀번호 비교 메서드
 userSchema.methods.comparePassword = function(plainpassword, cb) {
     // plainpassword: 사용자가 입력한 비밀번호
     // this.password: 데이터베이스에 저장된 암호화된 비밀번호
@@ -63,6 +65,7 @@ userSchema.methods.comparePassword = function(plainpassword, cb) {
     });
 };
 
+//토큰 생성 메서드
 userSchema.methods.generateToken = function(cb) {
     var user = this;
     //수정 전 
@@ -74,7 +77,6 @@ userSchema.methods.generateToken = function(cb) {
         .then(user => cb(null, user))
         .catch(err => cb(err));
 };
-
 
 //기존코드
 // userSchema.statics.findByToken = function(token, cb) {
@@ -91,6 +93,7 @@ userSchema.methods.generateToken = function(cb) {
 //     });
 // };
 
+//토큰 검증 메서드
 userSchema.statics.findByToken = function(token) {
     var user = this;
     // 토큰을 복호화(decode)하여 유저 아이디를 가져옵니다.
@@ -102,8 +105,6 @@ userSchema.statics.findByToken = function(token) {
     }
 };
 
-
-
-
+//Mongoose 모델 생성 및 내보내기
 const User = mongoose.model('User', userSchema);
 module.exports = { User };
