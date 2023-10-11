@@ -42,6 +42,7 @@ return { ...state, loginSuccess: action.payload }
  }
 }
 ```
+***
 
 - 리듀서 모듈 결합
  + combineReducers 함수를 사용하여 여러 리듀서 모듈을 결합한 rootReducer를 생성합니다.
@@ -56,6 +57,7 @@ user
 
 export default rootReducer;
 ```
+***
 
 - 액션 타입 정의
  + 사용자 로그인 및 회원가입 액션의 타입을 정의합니다.
@@ -63,6 +65,7 @@ export default rootReducer;
 export const LOGIN_USER = "LOGIN_USER";
 export const REGISTER_USER = "REGISTER_USER";
 ```
+***
 
 - 로그인 액션 생성자 함수
   + loginUser 함수는 사용자 로그인을 처리하는데 사용됩니다. axios.post를 통해 서버의 /api/users/login 엔드포인트로 POST 요청을 보냅니다.
@@ -79,6 +82,7 @@ return {
 };
 }
 ```
+***
 
 - 회원가입 액션 생성자 함수
   + registerUser 함수는 사용자 회원가입을 처리하는데 사용됩니다. axios.post를 통해 서버의 /api/users/register 엔드포인트로 POST 요청을 보냅니다.
@@ -94,8 +98,9 @@ return {
 };
 }
 ```
+***
 
--  React 컴포넌트인 "LoginPage"를 정의하고, 사용자가 이메일과 비밀번호를 입력하여 로그인하는 기능을 구현합니다.
+ ### React 컴포넌트인 "LoginPage"를 정의하고, 사용자가 이메일과 비밀번호를 입력하여 로그인하는 기능을 구현합니다.
   1. useState를 사용하여 상태 관리
      + useState 훅을 사용하여 컴포넌트의 상태를 관리합니다. 이 컴포넌트에서는 Email과 Password라는 두 가지 상태를 관리합니다.
      + Email 상태는 사용자가 이메일 입력 필드에 입력한 값을 저장하며, setEmail 함수를 사용하여 업데이트할 수 있습니다.
@@ -147,6 +152,7 @@ dispatch(loginUser(body))
 ```
 
 ***
+
 ### Server 부분
 
 - 필수 패키지 및 모듈 불러오기
@@ -160,6 +166,7 @@ const { auth } = require('./middleware/auth'); //auth: 사용자 인증 관련 �
 const { User } = require("./models/User");     // User: 사용자 정보를 다루는 모델.
 const mongoose = require('mongoose');          //Mongoose 모듈을 가져옵니다
 ```
+***
 
 - MongoDB 연결 설정
   + MongoDB에 연결하는 설정을 수행합니다. config.mongoURI에 MongoDB 연결 문자열이 포함되어 있어야 합니다.
@@ -170,6 +177,7 @@ useUnifiedTopology: true,
 }).then(() => console.log('MongoDB Connected...'))
 .catch(err => console.log(err));
 ```
+***
 
 - 사용자 회원가입
    + 클라이언트에서 POST 요청으로 사용자 정보를 전송하여 회원가입을 처리합니다. 새로운 사용자 정보를 MongoDB에 저장하고 회원가입 성공 여부를 반환합니다.
@@ -191,6 +199,7 @@ res.json({ success: false, err });
 });
 });
 ```
+***
 
 - 사용자 로그인
    + 클라이언트에서 POST 요청으로 이메일과 비밀번호를 전송하여 로그인을 처리합니다. 이메일이 데이터베이스에 있고 비밀번호가 일치하면 토큰을 생성하고 쿠키로 반환합니다.
@@ -223,6 +232,7 @@ res.status(500).json({ loginSuccess: false, message: "서버 에러" });
 });
 });
 ```
+***
 
 - 사용자 권한 확인
    + /api/users/auth 경로에 접근할 때 사용자가 인증되어 있으면 사용자 정보를 반환합니다.
@@ -241,6 +251,7 @@ image: req.user.image
 });
 });
 ```
+***
 
 - 사용자 로그아웃
    + 사용자 로그아웃 요청을 처리하고 토큰을 삭제합니다.
@@ -262,6 +273,7 @@ res.status(500).json({ success: false, err });
 });
 });
 ```
+***
 
 - 서버를 5000번 포트에서 리스닝
   + 서버를 시작하고 클라이언트 요청을 수신할 준비를 마치는 역할을 합니다. 서버가 시작되면 해당 포트에서 클라이언트의 요청을 처리하기 위해 대기하게 됩니다.
@@ -272,8 +284,9 @@ app.listen(port, () => {
 console.log(`Example app listening on port ${port}`);
 });
 ```
+***
 
-- (사용자 데이터베이스 모델을 정의하고 비밀번호 암호화, 토큰 생성 및 검증 기능을 추가하여 사용자 관리하는 부분)
+### (사용자 데이터베이스 모델을 정의하고 비밀번호 암호화, 토큰 생성 및 검증 기능을 추가하여 사용자 관리하는 부분)
 - 사용자 스키마 정의
   + userSchema는 사용자 정보를 저장하는 스키마를 정의합니다. 이 스키마에는 사용자 이름, 이메일, 비밀번호, 성(성의 최대 길이는 50), 역할(role), 이미지 정보, 토큰, 토큰의 유효 기간 등이 포함됩니다.
 ```
@@ -308,6 +321,7 @@ type: Number
 }
 });
 ```
+***
 
 - 비밀번호 암호화
   + 사용자가 비밀번호를 변경하거나 새로 등록할 때, 비밀번호를 암호화합니다. bcrypt를 사용하여 비밀번호를 해싱하고 암호화된 비밀번호를 user.password에 저장합니다.
@@ -335,8 +349,9 @@ userSchema.statics.findByToken = function(token) { ... };
 const User = mongoose.model('User', userSchema);
 module.exports = { User };
 ```
+***
 
-- (사용자 인증을 처리하는 미들웨어 함수를 정의)
+### (사용자 인증을 처리하는 미들웨어 함수를 정의)
 - 클라이언트로부터 받은 토큰을 사용하여 사용자를 인증하고, 인증된 사용자의 정보를 요청 객체(req)에 추가하는 역할을 합니다.
   + 클라이언트로부터 쿠키(x_auth)를 통해 전달된 토큰을 token 변수에 저장합니다.
   + User.findByToken(token)를 사용하여 토큰을 복호화하고, 이 토큰과 일치하는 사용자를 데이터베이스에서 찾습니다.
