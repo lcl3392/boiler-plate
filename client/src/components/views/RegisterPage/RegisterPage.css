@@ -1,3 +1,22 @@
+.Register_visual {
+    background: url('https://i.pinimg.com/564x/4d/7e/eb/4d7eeb5969a9523843c2e767286e1455.jpg') no-repeat;
+    background-position: 400px;
+}
+.Register_box{
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    border-radius: 10%;
+    margin-top: 60px;
+    background:#fff; 
+    background-color: rgba(192, 202, 232, 0.63);
+}
+.Register_box h2 {
+   text-align: center;
+   padding-top: 45px;
+   margin-bottom: -45px;
+}
+
 .RegisterPage {
     display: flex;
     justify-content: center;

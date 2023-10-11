@@ -48,6 +48,9 @@ function LoginPage(props) {
   return (
     <div>
       <Header/>
+      <div className='Login_visual'>
+      <div className='Login_box'>
+        <h2>Login</h2>
       <div className='LoginPage'>
      <form style={{display:'flex', flexDirection:'column'}}
      onSubmit={onSubmitHandler}>
@@ -61,6 +64,8 @@ function LoginPage(props) {
           <Link to="/register"><button className="signup-button">Sign Up</button></Link>
           </div>
      </form>
+     </div>
+     </div>
      </div>
      <Footer/>
     </div>

@@ -59,6 +59,9 @@ function RegisterPage(props) {
   return (
     <div>
       <Header/>
+      <div className='Register_visual'>
+      <div className='Register_box'>
+      <h2>Sign up</h2>
       <div className='RegisterPage'> 
      <form style={{display:'flex', flexDirection:'column'}}
      onSubmit={onSubmitHandler}>
@@ -78,6 +81,8 @@ function RegisterPage(props) {
           Join Membership
           </button>
      </form>
+     </div>
+     </div>
      </div>
      <Footer/>
     </div>
