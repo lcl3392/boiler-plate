@@ -15,8 +15,10 @@
 
 ***
 
-## 노션 code 자세한 설명 정리내용
+
+### code 자세한 설명 노션 정리내용
 - https://scythe-booklet-0cc.notion.site/c3f51a807ea342b5a914e7b295519d3e?pvs=4
+
 
 ***
    
